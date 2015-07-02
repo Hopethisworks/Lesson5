@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Think like a programmer</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="javascript.js"></script>
+<link rel="stylesheet" href="stylesheets/main.css">
+</head>
+<body>
+<!--This is a comment that is ignored by the computer--> 
+<!--note that you need to tab to align your div and paragraphs up to make it easier to read and de-bug your code later - it looks like the best way to do this is to keep your BLOCK tags seperate from your text and at the beginning of the line -->
+<h1>Udacity Intro to Programming Summary</h1>
+<div class="lesson">
+  <h2>HTML Introduction</h2>
+  <div class="concept">
+    <p> I've learned terminology like <em>tags</em> and <em>elements</em> (tag - content - tag) in HTML.  I have learned that there are different types of tags, some require <a href="http://www.google.com">attributes</a> and some impact the text by putting it in a "box" (the<em>"block"</em> elements.) The body of the web page is most important, and is the focus of this learning.  Complex information is in the header, and is important also. </p>
+    <p> I've learned that computers will follow these direction precisely, even if they are <b>incorrect</b> directions. </p>
+    <p> I've learned that repetition wastes time and can introduce errors. </p>
+    <div class="focus"> <strong>I've learned not to sweat remembering details that I can look it up.</strong> <!--I removed the tag "Center" after I learned about css.  BUT I was really proud that I figured "Center" out all on my own.--> 
+    </div>
+  </div>
+  <h2>HTML and CSS Structure Tips</h2>
+  <div class="concept">
+    <p> The important things to take away from this are: </p>
+    <!-- ul is un-ordered list.  Style can be disc, circle, square bullets, or none for no bullets. <li> tags every item in the list. -->
+    <ul class="square">
+      <li> HTML and CSS are both "languages"</li>
+      <li>HTML controls the "structure" of a web page </li>
+      <li>CSS controls the "style" of a page (how it looks).</li>
+      <li> When programmers talk about the "DOM" they are talking about the tree-like structure of a page. </li>
+    </ul>
+    <p> To learn more about "tree-like structure" refer (look it up if you forget!) to the wikipedia article on <a href="http://en.wikipedia.org/wiki/Tree_structure">Tree Structures.</a> </p>
+  </div>
+  <h2> Learning about CSS</h2>
+  <div class="concept">
+    <p> CSS is a cascading style sheet, and is a way to define how you want your <em> class </em> to look.  It makes a lot more sense when you realize that <em> class </em> is a user-defined field, and you define the field in the style sheet. This significantly contributes to reduced repetition and also makes all of your similar elements look and behave the same. </p>
+    <p> In CSS, code comments begin with /* and end with */. </p>
+  </div>
+  <h2>HTML Box Sizing</h2>
+  <div class="concept">
+    <p> HTML elements are boxes and each box has 4 components (center out: content, padding, border, margin.) If you set sizing in % instead of pixels, it will re-size more properly on different size screens.  Also , it is important to set the box-sizing attribute to every element to this:<br>
+      <span class="focus">* {<br>
+      -webkit-box-sizing: border-box;<br>
+      -moz-box-sizing: border-box;<br>
+      -ms-box-sizing: border-box;<br>
+      box-sizing: border-box;<br>
+      } </span> </p>
+    <p> Some other tips: </p>
+    <!-- OL is an ordered list. Type can = numbers (1), upper/lower case letters (A/a), roman numerals (I), or lower case roman numerals (i)-->
+    <ol type="1">
+      <li>Adding the rule display: flex; to the appropriate CSS will let divs appear next to each other but only when the sum is less than 100%. </li>
+      <li>Look for Natural Boxes </li>
+      <li>Look for repeated styles and semantic elements</li>
+      <li>Write your HTML</li>
+      <li>Apply Styles</li>
+      <li>Click for <a href="http://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS hints</a> on how to use the flex box </li>
+    </ol>
+  </div>
+  <h2>Computer Science Basics</h2>
+  <div class="concept">
+    <p> Here are some terms to understand: <br>
+      Python is a language we will use, and it is also a program that will interpret the language we write into something the computer can understand.  This is known as an <em>Interpreter.</em> Another program that will help write code is a <em>Compiler,</em> which will write new programs for you using its code, all at one time. </p>
+    <p> Python uses Grammar like Sentence = Subject Verb Object.  In this example, the Subject Verb and Object are <em>Non-Terminal</em> items.  Non-terminal means something you are not finished with, and you keep replacing with a replacement based on the defined rules until you get to a <em>Terminal. </em><br>
+      Rule example: Non-Terminal -> Replacement<br>
+      Terminals never appear on the left side of a rule. </p>
+    <p> Python uses expressions as well.  The rules are similar, replace Expressions with a number, number operator (like + ) number, or another Expression:<br>
+      Expression -> Expression Operator Expression <br>
+      Expression -> Number <br>
+      Actual numbers and operators are terminals on the right side of the rule <br>
+    </p>
+  </div>
+  <h2>Variables</h2>
+  <div class="concept">
+    <p> Variables are a way to assign meaning to a number, like a description.  This is so you can then use the descriptive term for the number in the future to reduce confusion and make it easier to see how the number is being used logically.  For example: </p>
+    <UL class="none">
+      <li> Millionth = 1.0/1000000</li>
+      <li> Now if you want to display a very large number in Millionths so it is more manageable, you can mutliply by "Millionth" instead of re-typing all the numbers.</li>
+    </UL>
+    You must be careful, however, because if the definition for the variable changes at some point, the new definition is used <em>until it is again re-defined.</em> Here is a simple example of how this works:
+    <UL class="none">
+      <li> nickels = 20 #it is a good idea to add notes with a # in front to remind you what you defined - here I'm saying 4 quarters in a dollar#</li>
+      <li> dollars_in_10 = 10 #there are 10 dollars in a ten dollar bill#</li>
+      <li> nickels_in_10 = nickels * dollars_in_10 #not very meaningful, but you get the idea#</li>
+    </UL>
+  </div>
+  <h2>Strings</h2>
+  <div class="concept">
+    <p> Strings are lines of text surrounded by one or two quotes.  You can use either to allow you to use the text version of the other kind of quotes within the string.  You can define a string with a variable name, just like the number example above, then use that variable name as shorthand. Once you have the string defined, you can work with text within the string with two commands: <em> INDEX</em> and <em> FIND</em>. </p>
+    <UL class="none">
+      <li>Index counts the characters in the string from left to right, beginning with ZERO. The syntax is to put the index you are looking for in brackets, and can return one character or a range of characters.  For a range  Examples:</li>
+    </UL>
+    <UL class="circle">
+      <li> string [2] means "r" because you count the 3rd character from "s" </li>
+      <li> string [1:3] means "tr" because you start at the 2nd character (remember, start at zero) and stop one character before your end point, that is, don't include your last character when counting a range.</li>
+      <li>Don't forget that the expressions in the index counts can be variables themselves, and much more complex than simple numbers!</li>
+    </UL>
+    <p> Find is a function that finds a target string within the original string and returns the number of the character where the target begins. The syntax is string1.find(string2). There is another parameter you can add, so that the computer will begin looking for string2 at a particular character within string1, like string1.find(string2,4) will begin looking for string2 within string1 at character 4. This is helpful if you are looking for multiple instances of string2 within string1 since .find without the second parameter will only return the start of the first instance of string2.<br>
+      Putting these two together is helpful - find the start of string2 then print the remainder of string1 from that point to confirm you found it. Like so: </p>
+    <UL class="square">
+      <li>string1="Python is more fun than HTML"</li>
+      <li>string2="more"</li>
+      <li>print string1.find(string2) = 10  #I'm looking for the position where string 2 appears in string 1 </li>
+      <li>print string1[10:] = more fun than HTML</li>
+      <li>print string1[string1.find(string2):] = more fun than HTML #substiting string 2 in place of 10th position gives the same answer, useful for picking up text</li>
+    </UL>
+    Now, isn't that cool?? :) <br>
+  </div>
+  <h2>Procedures or Functions</h2>
+  <div class="concept">
+    <p> A function is something that takes is defined by the developer and then takes input, does something, and then produces output. For example, a function named <em>sum</em> could take a user-defined number of inputs and add them if they are digits or concatenate them if they are strings as output.  The developer names it <em>sum</em> so it makes sense, but it could be called anything since it is user defined. One first creates the function, then can use it many times over without having to re-define it. This is another example of eliminating repetition. <br>
+      A function is written with a "def" (define) then a label, followed by inputs in parantheses. Every instruction line after the definition of the name must be indented. The final line of the function MUST include a return staetement, what you want the function to return in the end, or it won't actually <em>do</em> anything. However, there are times when you don't <em>want</em>the code to do anything yet, so you end the procedure with the term <em>pass</em> rather than return.<br>
+      Here is an example of <em>sum</em>: </p>
+    <div class="code-block"> def sum(x,y,z): <br>
+      <span class="indent">return x+y+z</span> </div>
+    <p> To use a function, we write the name of the function followed by the value(s) we want to give it in parentheses. Like this:
+    <div class="code-block"> print sum(4,5,6) <br>
+      >>>15 </div>
+  </div>
+  <h2>A Baby Python is born!</h2>
+  <div class="concept">
+    <p> Here is my first Python code to create HTML. The next section is what the code produced! </p>
+    <div class="code-block"> def title(title_text):<br>
+      <span class="indent">return &quot;&lt;h2&gt;&quot;+title_text+&quot;&lt;/h2&gt;&quot;+&quot;&lt;div class=&quot;concept&quot;&gt; +&quot;&lt;p&gt;&quot; </span><br>
+      def description(description_text):<br>
+      <span class="indent">return description_text+&quot;&lt;/p>"+&quot;&lt;/div&gt;&quot; </span><br>
+      print title(&quot;I created this title with Python!&quot;)<br>
+      print description(&quot;I think I understand how this could really help speed up coding in HTML, but the triple quotes really stumped me!&quot;) </div>
+  </div>
+  <h2>I created this title with Python!</h2>
+  <div class="concept">
+    <p> I think I understand how this could really help speed up coding in HTML, but the triple quotes really stumped me!</p>
+  </div>
+  <h2>But Andy did it much better...</h2>
+  <div class="concept">
+    <p> Here is Andy's code, with a few edits to match my CSS structure. </p>
+    <div class="code-block"> def HTML_Concept(title, description):<br>
+      <span class="indent"> title_text = &quot;&lt;h2&gt;&quot;+title+&quot;&lt;/h2&gt;</span><br>
+      <span class="indent"> description_text = &quot;&quot;&quot;</span><br>
+      <span class="indent"> &lt;div class=&quot;concept&quot;&gt;</span><br>
+      <span class="indent_twice"> &lt;p&gt;</span><br>
+      <span class="indent"> &quot;&quot;&quot; +description</span><br>
+      <span class="indent_twice"> close=&quot;&quot;&quot;</span><br>
+      <span class="indent_twice"> &lt;/p&gt;</span><br>
+      <span class="indent"> &quot;&quot;&quot;</span><br>
+      <span class="indent"> section = title_text + description_text + close</span><br>
+      <span class="indent"> return section</span><br>
+      <br>
+      first_title = &quot;This section was created with the Python code commented above&quot;<br>
+      first_description = &quot;Wow, this is really complicated! I really hope this works!&quot;<br>
+      <br>
+      print HTML_Concept(first_title,first_description) </div>
+  </div>
+  <h2>This section was created with the Python code commented above!</h2>
+  <div class="concept">
+    <p> Wow, this is really complicated! I really hope this works! </p>
+  </div>
+  <h2>The plot thickens - Operators </h2>
+  <div class="concept">
+    <p> Operators provide a means for comparision and returns a Boolean 'True' or 'False.' They include </p>
+    <UL class="square">
+      <li> greater than, greater than or equal to </li>
+      <!-- I want to type > and >= but I get code errors if I use those characters -->
+      <li> less than, less than or equal to </li>
+      <!-- I want to type  < and <= but I get code errors if I use those characters -->
+      <li> != means not equivalent </li>
+      <li> == means an equality comparison.  Must use double = because a single = is how we assign values to a variable </li>
+    </UL>
+    <p> Here is an example of a <em>test exression </em> using operators: </p>
+    <div class="code-block"> if (test epression): <br>
+      <span class="indent">This block of instructions are executed ONLY if true and is indented</span><br>
+      This block of instructions is executed if the test is false and is not indented </div>
+    <p> Here are some examples we used in class: </p>
+    <div class="code-block"> def bigger (n,p): <br>
+      <span class="indent"> If n>p:</span><br>
+      <span class="indent_twice"> return n</span><br>
+      <span class="indent"> Else:</span><br>
+      <span class="indent_twice"> return p</span> </div>
+    <p> We used this 'bigger' function in a harder example that could be solved two ways: </p>
+    <div class="code-block"> def biggest (a,b,c): <br>
+      <span class="indent"> If a > b:</span><br>
+      <span class="indent_twice"> If a > c:</span><br>
+      <span class="indent_three_times"> return a</span><br>
+      <span class="indent_twice"> Else:</span><br>
+      <span class="indent_three_times"> return c</span><br>
+      <span class="indent"> Else:</span><br>
+      <span class="indent_twice"> If b > c:</span><br>
+      <span class="indent_three_times"> return b</span><br>
+      <span class="indent_twice"> Else:</span><br>
+      <span class="indent_three_times"> return c</span><br>
+    </div>
+    <br>
+    <p> Or it can be solved using the "bigger" function: </p>
+    <div class="code-block"> def bigger (a,b): <br>
+      <span class="indent"> If a>b:</span><br>
+      <span class="indent_twice"> return a</span><br>
+      <span class="indent"> Else:</span><br>
+      <span class="indent_twice"> return b</span><br>
+      def biggest (a,b,c): <br>
+      <span class="indent"> return (bigger(bigger(a,b),c) </span><br>
+      <em> OR </em><br>
+      def biggest (a,b,c): <br>
+      <span class="indent"> return max (a,b,c) </span> </div>
+    <br>
+    <p> Example: Define a procedure, greatest, # that takes as input a list of positive numbers, and returns the greatest number in that list. If the input list is empty, the output should be 0.<br>
+    </p>
+    <div class="code-block"> def greatest(list_of_numbers):<br>
+      <span class="indent"> if list_of_numbers ==[]:</span><br>
+      <span class="indent_twice"> return 0</span><br>
+      <span class="indent"> else:</span><br>
+      <span class="indent_twice"> return max(list_of_numbers)</span> </div>
+    <br>
+    <p> Operators can also be used with text.  The example we covered was to return "True" if a person's name started with "D" or "N": </p>
+    <div class="code-block"> def is_friend(name): <br>
+      <span class="indent">if name[0]=='D':</span><br>
+      <span class="indent_twice"> return True </span><br>
+      <span class="indent">if name[0]=='N': </span><br>
+      <span class="indent_twice">return True </span><br>
+      <span class="indent">return False </span><br>
+      print is_friend('Diane') <br>
+      returns : True </div>
+    <br>
+    <br>
+  </div>
+  <h2>Loops </h2>
+  <div class="concept">
+    <p> Loops use a "While" function to repeatedly evaluate if the test expression is true and perform the block of code repeatedly as long as the expression is true.  A <em>Break</em> is used to stop the loop while the test expression is still true, and provides the ability to move to the next block of code.  The code stops running when the test expression is false, and moves to the next block of code.  Here is an example to count numbers from 1 to a defined number, including the defined number: </p>
+    <div class="code-block"> def print_numbers(n): <br>
+      <span class="indent"> i = 1 </span><br>
+      <span class="indent"> while i is less than or equal to n: </span><br>
+      <!--really says while i <= n: --> 
+      <span class="indent_twice"> print i </span><br>
+      <span class="indent_twice"> i = i + 1 </span><br>
+      print_numbers(3) <br>
+      returns: <br>
+      1<br>
+      2<br>
+      3 </div>
+    <br>
+  </div>
+  <h2>Generating HTML - complete example </h2>
+  <div class="concept">
+    <p> First develop a strategy for your code: </p>
+    <ol type="1">
+      <li>Define inputs and outputs (eg Titles and Descriptions are inputs, outputs are HTML code) </li>
+      <li>Write a function that isolates a single concept title & description from the block of text (get_concept__by_number)</li>
+      <li>Write a function to get the title text</li>
+      <li>Write a function to get the description text</li>
+      <li>Use title and description in function generate_concept_HTML</li>
+      <li>Write a loop to put it all together</li>
+    </ol>
+    <div class="focus"> The code below are the component functions that Andy wrote to create HTML, some commented out as the HTML components are picked up here: </div>
+    <!--        
+                def generate_concept_HTML(concept_title, concept_description):
+    html_text_1 = '''
+<div class="concept">
+    <div class="concept-title">
+        ''' + concept_title
+    html_text_2 = '''
+    </div>
+    <div class="concept-description">
+        ''' + concept_description
+    html_text_3 = '''
+    </div>
+</div>'''-->
+    <div class="code-block"> full_html_text = html_text_1 + html_text_2 + html_text_3
+      return full_html_text </div>
+    <br>
+    <br>
+    <div class="code-block"> def get_title(concept):<br>
+      <span class="indent"> start_location = concept.find('TITLE:')</span><br>
+      <span class="indent"> end_location = concept.find('DESCRIPTION:')</span><br>
+      <span class="indent"> title = concept[start_location+7 : end_location-1]</span><br>
+      <span class="indent"> return title</span><br>
+    </div>
+    <br>
+    <br>
+    <div class="code-block"> def get_description(concept):<br>
+      <span class="indent"> start_location = concept.find('DESCRIPTION:')</span><br>
+      <span class="indent"> description = concept[start_location+13 :]</span><br>
+      <span class="indent"> return description</span><br>
+    </div>
+    <br>
+    <br>
+    <div class="code-block"> def get_concept_by_number(text, concept_number): <span class="indent"> counter = 0</span><br>
+      <span class="indent"> while counter is less than concept_number:</span><br>
+      <!--use < symbol--> 
+      <span class="indent_twice"> counter = coutner + 1 </span><br>
+      <!--mispelled counter on purpose so it won't pick up in dreamweaver--> 
+      <span class="indent_twice"> next_concept_start = text.find('TITLE:')</span><br>
+      <span class="indent_twice"> next_concept_end   = text.find('TITLE:', next_concept_start + 1)</span><br>
+      <span class="indent_twice"> concept = text[next_concept_start:next_concept_end]</span><br>
+      <span class="indent_twice"> text = text[next_concept_end:]</span><br>
+      <span class="indent"> return concept</span><br>
+    </div>
+    <br>
+    <br>
+    TEST_TEXT = """TITLE: Why Computers are Stupid
+    DESCRIPTION: The phrase "computers are stupid" refers 
+    to how they interpret instructions literally. This 
+    means that small typos can cause big problems.
+    TITLE: Python
+    DESCRIPTION: Python is a "programming language." It 
+    provides programmers a way to write instructions for a 
+    computer to execute in a way that the computer can understand.
+    TITLE: While Loops
+    DESCRIPTION: A while loop repeatedly executes the body of
+    the loop until the "test condition" is no longer true."""<br>
+    <div class="code-block"> def generate_all_html(text):<br>
+      <span class="indent"> current_concept_number = 1</span><br>
+      <span class="indent"> concept = get_concept_by_number(text, current_concept_number)</span><br>
+      <span class="indent"> all_html = ''</span><br>
+      <span class="indent"> while concept != '':</span><br>
+      <span class="indent_twice"> title = get_title(concept)</span><br>
+      <span class="indent_twice"> description = get_description(concept)</span><br>
+      <span class="indent_twice"> concept_html = generate_concept_HTML(title, description)</span><br>
+      <span class="indent_twice"> all_html = all_html + concept_html</span><br>
+      <span class="indent_twice"> current_concept_number = current_concept_number + 1</span><br>
+      <span class="indent_twice"> concept = get_concept_by_number(text, current_concept_number)</span><br>
+      <span class="indent"> return all_html</span><br>
+    </div>
+    <br>
+    <br>
+    <div class="code-block"> print generate_all_html(TEST_TEXT) </div>
+    <div class="focus"> This code returns: </div>
+    <div class="concept">
+      <div class="concept-title"> Why Computers are Stupid </div>
+      <div class="concept-description"> The phrase "computers are stupid" refers 
+        to how they interpret instructions literally. This 
+        means that small typos can cause big problems. </div>
+    </div>
+    <div class="concept">
+      <div class="concept-title"> Python </div>
+      <div class="concept-description"> Python is a "programming language." It 
+        provides programmers a way to write instructions for a 
+        computer to execute in a way that the computer can understand. </div>
+    </div>
+    <div class="concept">
+      <div class="concept-title"> While Loops </div>
+      <div class="concept-description"> A while loop repeatedly executes the body of
+        the loop until the "test condition" is no longer true </div>
+    </div>
+  </div>
+  <h2>Structured Data</h2>
+  <div class="concept">
+    <p> Structured data can be strings or lists.  A string is a sequence of characters, but the list is a sequence of ANYTHING.  You use INDEX features in lists, just like strings. <br>
+      [] = an empty list<br>
+      <em> Here is a string and list comparison:</em>
+    <table style="width:100%">
+      <tr>
+        <th><b>Strings</b></th>
+        <th><b>Lists</b></th>
+      </tr>
+      <tr>
+        <td>s = 'yabba!'</td>
+        <td>p = ['y','a','b','b','a','!']</td>
+      </tr>
+      <tr>
+        <td>s[1]  returns 'a'</td>
+        <td>p[1] returns 'a'</td>
+      </tr>
+      <tr>
+        <td>s[2:4] returns 'bb'</td>
+        <td>p[2:4] returns ['b','b']</td>
+      </tr>
+    </table>
+    <br>
+    You can nest lists within lists.  If you need a line break to make it easier to read, break after the comma. For nested lists, you can index twice to return a single expression. Example:<br>
+    <div class="code-block"> List=[['you','Barry'],['me','Brenda']] <br>
+      List[0][1] </div>
+    <br>
+    returns 'Barry'
+    <h3>MUTATION:</h3>
+    <p> Lists support mutation (strings do NOT)- you can change the value of the list after it is created without creating a new object.  You assign a new value similar to index: </p>
+    <div class="code-block"> List = ['Y','e','l','l','o']<br>
+      List[0] = 'H' <br>
+      Print List </div>
+    <br>
+    returns ['H','e','l','l','o']<br>
+    <p> Procedures do not need a return statement when replacing an item in a list </p>
+    <h3>ALIASING:</h3>
+    Two different variables are assigned to the same object - this is important to understand when debugging - you may have renamed or added a name to a variable
+    <h3>LIST OPERATIONS:</h3>
+    <p> Append - This is similar to the 'find' method and works like a procedure.  It mutates the list to add at the end of the list. It does NOT create a new list but edits the existing list. </p>
+    <div class="code-block"> List.append('!') <br>
+      Print List </div>
+    <br>
+    returns ['H','e','l','l','o','!']
+    <h3>+ - : </h3>
+    This works like concatenate for strings but DOES create a new list:<br>
+    <div class="code-block"> a=[0,1] <br>
+      b=[2,3] <br>
+      a + b  returns [0,1,2,3] <br>
+      a.append(b) returns [0,1,[2,3]] </div>
+    <br>
+    <h3>Len (short for length):</h3>
+    This counts the items in the list and returns a number. Len also works for strings and other items. <br>
+    <div class="code-block"> Len([0,1]) returns 2 <br>
+      Len(['a',['b',['c','d']]]) returns 2 <br>
+      Len('Udacity') returns 7 </div>
+    <br>
+    <h3>The += operator for lists:</h3>
+    This works by adding characters to the end of the list, similar to +, BUT also works like append in mutating the existing list.<br>
+    <div class="code-block"> list3 = [1,2,3,4] <br>
+      list3 += [5,6,7] <br>
+      print list3 <br>
+      returns  [1, 2, 3, 4, 5, 6, 7]<br>
+    </div>
+    <br>
+    <h3>Loops on Lists:</h3>
+    While Loop - continue to execute while the test is true <br>
+    For Loop - <em>e</em> is a new variable we introduce that is the first object in the list; <em>list</em> is any expression that returns a list. <em>e</em> is every element in the list, one by one.<br>
+    <!--examples are from From <https://www.udacity.com/course/viewer#!/c-ud552-nd/l-3531748835/e-3618729701/m-3665548646> -->
+    <div class="code-block"> for <em>e</em> in <em>list</em>:<br>
+      <span class="indent"> Block of code to perform on every element in list </span> </div>
+    <br>
+    <p> Example: </p>
+    <div class="code-block"> def sum_list(p): <br>
+      <span class="indent"> result = 0 </span><br>
+      <span class="indent"> for e in p: </span><br>
+      <span class="indent_twice"> result = result + e </span><br>
+      <span class="indent"> return result</span><br>
+      <br>
+      print sum_list( [4,5,6] ) </div>
+    <br>
+    <br>
+    Returns 15
+    <p> Example: Define a procedure, measure_udacity, that takes as its input a list of strings, and returns a number that is a count of the number of elements in the input list that start with the uppercase letter 'U'. </p>
+    <div class="code-block"> def measure_udacity(p):<br>
+      <span class="indent"> count = 0 </span><br>
+      <span class="indent"> for e in p: </span><br>
+      <span class="indent_twice"> If e[0]=="U" </span><br>
+      <span class="indent_three_times"> count = count + 1 </span><br>
+      <span class="indent"> return count </span><br>
+    </div>
+    <p> Example: Define a procedure, find_element, that takes as its inputs a list and a value of any type, and returns the index of the first element in the input list that matches the value.   If there is no matching element, return -1. <br>
+      There are two solutions reviewed: </p>
+    <div class="code-block"> def find_element(list,target):<br>
+      <span class="indent"> count = 0 </span><br>
+      <span class="indent"> while count<em>is less than</em>len(list): <!--actual code is 'while count<len(list):' --> </span><br>
+      <span class="indent_twice"> If list[count]==target: </span><br>
+      <span class="indent_three_times"> return count </span><br>
+      <span class="indent_twice"> count = count + 1 </span><br>
+      <span class="indent"> return -1 </span><br>
+    </div>
+    <p> OR </p>
+    <div class="code-block"> def find_element(list,target):<br>
+      <span class="indent"> count = 0 </span><br>
+      <span class="indent"> for e in list: </span><br>
+      <span class="indent_twice"> If e == target: </span><br>
+      <span class="indent_three_times"> return count </span><br>
+      <span class="indent_twice"> count = count + 1 </span><br>
+      <span class="indent"> return -1 </span><br>
+    </div>
+    <h3>INDEX and IN Procedures:</h3>
+    <p> An alternative solution is using INDEX method: - if <em>value</em> is in the <em>list</em> it returns the first position where <em>value</em> is found, otherwise produces an error<br>
+      Syntax <em>list</em>.index(<em>value</em>)<br>
+      <br>
+      Another operation required for the alternate is the IN procedure. <br>
+      Syntax is <em>value</em> in <em>list</em><br>
+    </p>
+    <div class="code-block"> Print <em>value</em> in <em>list</em> </div>
+    <br>
+    Returns False if the value is not in the list, else returns true because the value is in the list.  Can use the opposite and write <br>
+    <div class="code-block"> is <em>value</em> not in <em>list</em> </div>
+    <p> for opposite meaning. </p>
+    <div class="code-block"> def find_element(list,target): <br>
+      <span class="indent"> If target in list: </span><br>
+      <span class="indent_twice"> Return list.index(target) </span><br>
+      <span class="indent"> else: </span><br>
+      <span class="indent_twice"> Return -1 </span> </div>
+    <br>
+    <br>
+    <div class="code-block"> Print find_element([1,2,3],3) </div>
+    <br>
+    <p> Returns 2  because 3 is in character space 2 in the list starting at 0. </p>
+    <div class="code-block"> Print find_element(['alpha','beta'],'gamma') </div>
+    <br>
+    <p> Returns -1 because gamma does not appear in the list. <br>
+    <h3>More  Lists examples:</h3>
+    EXAMPLE 1: Lists can contain strings<br>
+    <div class="code-block"> string_list = ['HTML', 'CSS', 'Python']<br>
+      print string_list<br>
+    </div>
+    <br>
+    Returns:  ['HTML', 'CSS', 'Python']<br>
+    <br>
+    EXAMPLE 2: Lists can contain numbers:<br>
+    <div class="code-block"> number_list = [3.14159, 2.71828, 1.61803]<br>
+      print number_list<br>
+    </div>
+    <br>
+    Returns:  [3.14159, 2.71828, 1.61803]<br>
+    <br>
+    EXAMPLE 3: Lists can be 'accessed' and 'sliced'<br>
+    <div class="code-block"> pi = number_list[0]<br>
+      not_pi = number_list[1:]<br>
+      print pi<br>
+      print not_pi </div>
+    <br>
+    Returns:  3.14159<br>
+    [2.71828, 1.61803]<br>
+    <br>
+    EXAMPLE 4: Lists can contain strings AND numbers<br>
+    <div class="code-block"> mixed_list = ['Hello!', 42, "Goodbye!"]<br>
+      print mixed_list </div>
+    <br>
+    Returns: ['Hello!', 42, 'Goodbye!']<br>
+    <br>
+    Example 5: Lists can even contain other lists<br>
+    <div class="code-block"> list_with_lists = [3, 'colors:', ['red', 'green', 'blue'], 'your favorite?']<br>
+      print list_with_lists<br>
+    </div>
+    <br>
+    Returns: [3, 'colors:', ['red', 'green', 'blue'], 'your favorite?']<br>
+    <br>
+    EXAMPLE with  a 'for' loop:<br>
+    <div class="code-block"> example_list_1 = ['a', 'b', 'c', 'd'] <br>
+      for thing in example_list_1:<br>
+      <span class="indent"> print thing</span> </div>
+    <br>
+    Returns:<br>
+    a<br>
+    b<br>
+    c<br>
+    d<br>
+    <br>
+    EXAMPLE with loops on nested lists (remember to break at commas in long lists)<br>
+    <div class="code-block"> example_list_2 = [['China', 'Beijing'],<br>
+      <span class="indent"> ['USA'  , 'Washington D.C.'],</span><br>
+      <span class="indent"> ['India', 'Delhi']]</span><br>
+      for country_with_capital in example_list_2:<br>
+      <span class="indent"> country = country_with_capital[0]</span><br>
+      <span class="indent"> capital = country_with_capital[1]</span><br>
+      <span class="indent"> print capital + ' is the capital of ' + country</span> </div>
+    <br>
+    Returns:<br>
+    Beijing is the capital of China<br>
+    Washington D.C. is the capital of USA<br>
+    Delhi is the capital of India<br>
+    <br>
+    EXAMPLE: Write a procedure list_test which takes three lists as inputs. You should mutate the first input list to include 'a' as the last entry, mutate the second to include the entries 'a', 'b', 'c' and finally the last list should not be mutated but a copy should be returned with the additional entry 'w'.<br>
+    <div class="code-block"> def list_test(first_input, second_input, third_input): <br>
+      <span class="indent"> first_input = first_input.append('a')</span><br>
+      <span class="indent"> second_input += ['a','b','c']</span><br>
+      <span class="indent"> third_input = third_input + ['w']</span><br>
+      <span class="indent"> return third_input</span> </div>
+    <br>
+    <br>
+    first_input = [1,2,3]<br>
+    second_input = [4,5,6]<br>
+    third_input = [7,8,9]<br>
+    <br>
+    print list_test(first_input, second_input, third_input)<br>
+    returns [7,8,9,'w']<br>
+    print first_input<br>
+    returns [1,2,3,'a']<br>
+    print second_input<br>
+    regurns [4,5,6,'a','b','c']<br>
+    print third_input<br>
+    returns [7,8,9]<br>
+  </div>
+  <h2> Object Oriented Programming</h2>
+  <div class="concept">
+    <p> From Adobe: "Object-oriented programming is a style of programming that focuses on using objects to design and build applications. Think of an object as a model of the concepts, processes, or things in the real world that are meaningful to your application. For example, in a project management application, you would have a status object, a cost object, and a client object among others. These objects would work together (and with many other objects) to provide the functionality that you want your project management application to have. Developers choose to program in the object-oriented paradigm because the proper use of objects makes it easier to build, maintain, and upgrade an application." In addition, it allows use of independently developed and tested modules that can be put together for a large project or used separately for a small one.  It allows the programmer to think about the objects that are the end goal, then develop code to support the object goals. This is opposite of procedureal programming, which thinks about the how process before the object of the process.  It works better for the beginner to conceptualize, I think. </p>
+    <p> It is clear that python is using object-oriented programming as each module focuses on a single meaningful subject, then modules are put together.  HTML is also fundamentally object-oriented because you first define the "what" you are trying to build, determine the end goal, then figure out how to do it in meaningful boxes, or "objects."  Similar to the inheritance properties that instances of a class obtain from the parent in python, the CSS class is a singly developed style 'package' that can be used many times to provide the same properties to every instance of the class application in HTML. </p>
+    <h3>Vocabulary</h3>
+    <table style="width:100%">
+      <tr>
+        <th><b>Term</b></th>
+        <th><b>Description</b></th>
+      </tr>
+      <tr>
+        <td>Object</td>
+        <td>An object is a self-contained component that contains properties and methods needed to make a certain type of data useful. An object's properties are what it knows and its methods are what it can do. </td>
+      </tr>
+      <tr>
+        <td>Class</td>
+        <td>Neatly packaged 'box' that puts things together, like a blueprint of a building. The 'blueprint' contains enough generic information about the building that the same blueprint can be used to create many similar buildings.  Similarly, the class contains pieces of info about the class, so you can use it to create multiple objects from the class.  The objects created are instances. </td>
+      </tr>
+      <tr>
+        <td>Instantiation</td>
+        <td>An instance is a specific object built from a specific class. It is assigned to a reference variable that is used to access all of the instance's properties and methods. When you make a new instance the process is called instantiation. <br>
+          Adobe has a great analogy: "Think about classes, instances, and instantiation like baking a cake. A class is like a recipe for chocolate cake. The recipe itself is not a cake. You can't eat the recipe (or at least wouldn't want to). If you correctly do what the recipe tells you to do (instantiate it) then you have an edible cake. That edible cake is an instance of the chocolate cake class." </td>
+      </tr>
+      <tr>
+        <td>init</td>
+        <td>A blank () is calling a function from the class called init (stands for initialize) that creates space in memory for a new object for the class. The init function inside the class is a <em>Constructor</em>, and when you create a class you must include the definition for init in reference to <em>self</em> (always the first parameter) to be able to construct new instances. Example: <br>
+          <div class="code-block">class Student(object): <br>
+            <span class="indent">'''3 single quotes document the class (or to document a module.)  When you type "doc" then Python will return the doc string.''' </span><br>
+            <span class="indent_twice">def __init__(self, name, id = 20001): </span><br>
+            <span class="indent_three_times">self.name = name </span><br>
+            <span class="indent_three_times">self.id = id </span> <!-- from: http://www.bogotobogo.com/python/python_classes_instances.php#sthash.mad94C5i.dpuf--> 
+          </div></td>
+      </tr>
+      <tr>
+        <td><a href="https://docs.python.org/3/library/">Python Standard Library</a></td>
+        <td>Python includes a standard library that provides built in modules that provide standardized solutions for many problems that occur in everyday programming. We learned about OS, Turtle, Time, and Webbrowswer standard modules.  I practiced Library on my own, and tried a few others but was not hugely successful. </td>
+      </tr>
+      <tr>
+        <td>The from...import Statement</td>
+        <td>Python's from statement lets you import specific attributes from a module into the current namespace. The from...import has the following syntax:<br>
+          <span class="indent">from modname import name1[, name2[, ... nameN]]</span><br>
+          For example, to import the function <em>fibonacci</em> from the module <em>fib</em>, use the following statement:<br>
+          <span class="indent">from fib import fibonacci</span><br>
+          This statement does not import the entire module fib into the current namespace; it just introduces the item fibonacci from the module fib into the global symbol table of the importing module.<br>
+          For our Twilio example: When I downloaded Twilio, it contained a folder (twilio) which contained another folder (rest) which contained a class (TwilioRestClient).<br>
+          When we say <em>rest.TwilioRestClient()</em> we are really calling the __init__ function defined in the class, and this creates an instance. We call this instance "Client" in the example how to use this class below.<br>
+          <div class="code-block"> From twilio.rest import TwilioRestClient </div>
+          <br>
+          This means from the twilio module, go to the rest folder and we are going to use the class TwilioRestClient from that folder and define the client attribute as such:<br>
+          <div class="code-block">Client = TwilioRestClient(account_sid, auth_token) </div>
+          <br>
+          OR you can say <br>
+          <div class="code-block"> From twilio import rest </div>
+          <br>
+          To tell the program to import the entire rest folder from the twilio module and define the client attribute as such: <br>
+          <div class="code-block"> Client = rest.TwilioRestClient(account_sid, auth_token) </div></td>
+      </tr>
+      <tr>
+        <td>Method</td>
+        <td>It's a function which is a member of a class.  A function is a named piece of code that performs an operation, and a method is a function with an extra parameter which is the object that it's to run on.</td>
+      </tr>
+      <tr>
+        <td>Instance Variables</td>
+        <td>All variables specific to an instance, uniquely associated with every instance of a class</td>
+      </tr>
+      <tr>
+        <td>Instance Method</td>
+        <td>A function defined within a class is called an Instance Method</td>
+      </tr>
+      <tr>
+        <td>Class Variable - </td>
+        <td>variables apply to all instances of a class, like the same movie ratings apply to all movie instances</td>
+      </tr>
+      <tr>
+        <td>Inheritance</td>
+        <td>parent & children</td>
+      </tr>
+      <tr>
+        <td>Method overriding</td>
+        <td>Child method overrides the parent method with the same name</td>
+      </tr>
+      <tr>
+        <td>Abstraction</td>
+        <td>Steve Jobs explained it this way: "Objects are like people. They are living, breathing things that have knowledge inside them about how to do things and have memory inside them so they can remember things. And rather than interacting with them at a very low level, you interact with them at a very high level of abstraction, like we are doing right here.
+          Here's an example: If I'm your laundry object, you can give me your dirty clothes and send me a message that says, 'Can you get my clothes laundered, please?' I happen to know where the best laundry place in San Francisco is. And I speak English, and I have dollars in my pockets. So I go out and hail a taxicab and tell the driver to take me to this place in San Francisco. I go get your clothes laundered, I jump back in the cab, I get back here. I give you your clean clothes and you have no idea how I did that. You have no knowledge of the laundry place. Maybe you speak French, and you can't even hail a taxi. You can't pay for one, you don't have dollars in your pocket. Yet I knew how to do all of that. And you didn't have to know any of it. All that complexity was hidden inside of me, and we were able to interact at a very high level of abstraction." </td>
+      </tr>
+    </table>
+  </div>
+  <h2>And now a video for funsies!</h2>
+  <div class="concept">
+    <p> I searched for a video that you might find entertaining...<br>
+    </p>
+  </div>
+</div>
+<!--copied this from the Fresh Tomatoes output, appears to be importing CSS from MIT and java "bootstrap."  I checked my HTML for errors, and the only errors I found were in this code I copied--> 
+<!-- Bootstrap 3 -->
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script> 
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<div class="video" media="screen"> 
+  <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script> 
+  <!-- Trailer Video Modal -->
+  <div class="modal" id="trailer">
+    <div class="modal-dialog">
+      <div class="modal-content"> <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true"> <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24" alt="Image Source Cannot Load"/> </a>
+        <div class="scale-media" id="trailer-video-container"> </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Main Page Content --> 
+  <!-- <div class="container">
+    <!--  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+        </div>
+      </div> 
+    </div> -->
+  <div class="container">
+    <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="_Nua3Cjdik0" data-toggle="modal" data-target="#trailer"> <img id=me src="images/Brenda.jpg" alt="Image Source Cannot Load" width="150" height="180">
+      <h4>Click image for the video</h4>
+    </div>
+  </div>
+</div>
+<div class="lesson">
+  <h2>Web Application Development</h2>
+  <div class="concept">
+    <p> The browser makes a request via the internet to the servers generally using Hyper Text Transfer Protocol. After the connection to the host is made, the HTTP request line includes the method of server request (commonly GET (default method) to obtain a document from the server, or POST to send information to the server,) the path (document requested from server,) and HTTP version.  The request lines include many headers. The server responds with files or response that the browser requested.  The servers are optimized for hosting files that make up the web.  Query parameters (AKA GET parameters) add an additional parameter in the URL, separated by a ? for the first parameter and & for additional parameters.  This provide additional information to the server.  Fragments (indicated by a leading #) are not sent to the server. </p>
+    <table style="width:100%">
+      <tr>
+        <th><b>GET</b></th>
+        <th><b>POST</b></th>
+      </tr>
+      <tr>
+        <td>Parameters in url</td>
+        <td>Parameters in body</td>
+      </tr>
+      <tr>
+        <td>Used for fetching documents</td>
+        <td>Used for updating data</td>
+      </tr>
+      <tr>
+        <td>Maximum URL length</td>
+        <td>No theoretical max length (but can be configured)</td>
+      </tr>
+      <tr>
+        <td>Okay to cache</td>
+        <td>Standard not to cache</td>
+      </tr>
+      <tr>
+        <td>Shouldn't change the server</td>
+        <td>Generally used to update the server</td>
+      </tr>
+    </table>
+    <br>
+    <p> The server responds to the HTTP request line with a status line, that includes the HTTP version and a status code with the status reason phrase. The status line is also followed by headers, similar to the client request line. <br>
+      Servers will provide a static or dynamic response to the requests.  The static response is a pre-written file like an image.  The dynamic response is created as a response to the client request by a running web application, a program to generate content that the browser requested.<br>
+      RESPONSE - represents the response that the server will send back to the client <br>
+      REQUEST - represents the request that came from the browser, you can call get on it to get different parameters<br>
+      Validating on the server side that we received what we expected to receive to make sure your server can handle broken data submitted by a browser. &nbsp;This is particularly a problem if the browser sends HTML (it must be escaped and returned as text,) inappropriate data, or malicious entries.<br>
+      Since users have a preference for different browsers, it is necessary to validate the input from all browser types since they behave differently.  It is best to use validation on the server in case the user may be using a browser that you are not familiar with and may not have tested. </p>
+  </div>
+  <h2>Templates</h2>
+  <div class="concept">
+    <p> A template library is a library to build complicated strings. This can be any string but when developing web applications it is primarily referring to HTML strings. <br>
+      <a href="http://Jinja.pocoo.org">Jinja2</a> is a template library application that is built into the Google webapp2.  To use it, add your library reference to the app.yaml file: <br>
+      Import jinja2 into your python file.
+    <h3>Benefits:</h3>
+    <ul class="square">
+      <li> Separate different types of code (HTML and python in this case)</li>
+      <li> Make more readable code</li>
+      <li> More secure websites</li>
+      <li> HTML that is easier to modify</li>
+      <li> This significantly contributes to reduced repetition and also makes all of your similar elements look and behave the same</li>
+    </ul>
+    <h3>Rules:</h3>
+    <ul class="square">
+      <li> Always automatically escape HTML when possible in templates to avoid errors</li>
+      <li> Minimize code in templates - use statements and for loops, and that is just about it</li>
+      <li> Minimize HTML in python code</li>
+    </ul>
+    <h3>Template Inheritance</h3>
+    Can use the same title, footer on each page from one template, sub-templates that define content in the middle
+    </p>
+  </div>
+  <h2>Helpful Links</h2>
+  <div class="concept"> {% for link in links %}
+    <blockquote><a href="{{ link.linkurl }}">{{ link.name }}</a></blockquote>
+    {% endfor %}
+    <p>Enter your helpful links here!</p>
+    <form action="/sign?guestbook_name={{ guestbook_name }}" method="post">
+      <label>
+      Site Name:
+      <div>
+        <input type="text" name="name" required>
+      </div>
+      <!-- the attribute "required" is boolean and keeps users from submitting blank forms -->
+      </label>
+      <br>
+      <label>
+      Site URL:
+      <div>
+        <input type="url" name="linkurl" required>
+      </div>
+      </label>
+      <!-- the attribute "required" is boolean and keeps users from submitting blank forms --> 
+      <!-- the input type "url" is HTML5 that can be automatically validated when submitted -->
+      <div class="error"> {{ error }} </div>
+      <div>
+        <input type="submit" value="Enter Link">
+        <a name="bottom"></a> </div>
+    </form>
+  </div>
+  <h2>JavaScript Exploration</h2>
+  <div class="concept">
+    <p> Variables are very  similar in Java as Python, but just use the prefix var when declaring a new  variable. Strings are in quotes. All numbers are saved as integers. </p>
+    <p>var firstName =  &quot;james&quot;;</p>
+    <p>var age = 44;</p>
+    <p>Var myArray = [ ];</p>
+    <p>Var myFunc =  functions( ) { };</p>
+    <p>Var myObject = { };</p>
+    <br>
+    <p>___________________________________</p>
+    <p>JavaScript is the  programming language used to make websites come alive. It often does so by  manipulating a website's HTML. Javascript runs  natively in the browser and provides a way to  save data in the form of variables. Declare new variable  with 'var' regardless of data you are saving.</p>
+    <p>The <a href="https://developer.mozilla.org/en-US/">Mozilla  Developer Network (MDN)</a> is a fantastic resource for all things web and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></p>
+    <ul class="circle">
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace">Documentation on JavaScript string.replace()</a></li>
+      <li>String replace will find patterns in a string and replace all or some matches of it</li>
+      <li>[string].replace([old],[new]);  to replace all or some matches, example:</li>
+      <li>var email = &quot;&lt;a href="mailto:blhutchinson@udacity.net"&gt;blhutchinson@udacity.net</a>&quot;</li>
+      <li>var newEmail = email.replace(&quot;udacity&quot;,&quot;bellsouth&quot;); </li>
+      <br>
+      <li><a href="http://api.jquery.com/append/">Documentation on  jQuery .append()</a></li>
+      <li>.append adds HTML to  existing element in the HMTL file. If content exists, .append adds to the end  of the content. Do not use quotes  when appending a variable, do use quotes when appending a string</li>
+      <li>$(&quot;#main&quot;).append(&quot;Brenda  Hutchinson&quot;);</li>
+      <li>The #element is  looking for the div ID=&quot;main&quot;</li>
+      <br>
+      <li>Console.log(); is  the basic 'print' command for java for debugging - REQUIRES semicolon at end!  It displays in the console area at the bottom of the browser.</li>
+      <li>console.log(variable);</li>
+    </ul>
+    <p>___________________________________</p>
+    <p>Exercise: Manipulate  s to make it equal to &quot;Udacity&quot;</p>
+    <div class="code-block">var s =  &quot;audacity&quot;; <br>
+      var udacityizer =  function(s) {<br>
+      <span class="indent">s = s.slice(1);</span><br>
+      <span class="indent">s =  s.replace(&quot;u&quot;,&quot;U&quot;);</span><br>
+      <span class="indent">return s;</span><br>
+      <p>};</p>
+    </div>
+    <p>___________________________________</p>
+    <p>Java has a set of  values that evaluate to true or false, but do not equal true or false:</p>
+    <div>
+      <table border="1" cellpadding="0" cellspacing="0" valign="top">
+        <tr>
+          <td><b>Truthy</b></td>
+          <td><b>Falsy</b></td>
+        </tr>
+        <tr>
+          <td><p>True</p>
+            <p>Non-zero numbers</p>
+            <p>&quot;strings&quot;</p>
+            <p>Objects</p>
+            <p>Arrays</p>
+            <p>Functions</p></td>
+          <td><p>False</p>
+            <p>0</p>
+            <p>&quot; &quot;</p>
+            <p>Undefined(variable doesn't exist and interpreter does not know what to do with it)</p>
+            <p>Null</p>
+            <p>NAN (not a number)</p></td>
+        </tr>
+      </table>
+    </div>
+    <p>The following values  are always falsy:</p>
+    <ul class="square">
+      <li>false</li>
+      <li>0 (zero)</li>
+      <li>&quot;&quot; (empty string)</li>
+      <li>null</li>
+      <li>undefined</li>
+      <li>NaN (a special Number value meaning Not-a-Number!)</li>
+    </ul>
+    <p>All other values are  truthy, including &quot;0&quot; (zero in quotes), &quot;false&quot; (false in  quotes), empty functions, empty arrays, and empty objects.</p>
+    <p> var a = !!(0); // variable is set to false<br>
+      var b = !!(&quot;0&quot;); // true</p>
+    <p>From <a href="http://www.sitepoint.com/javascript-truthy-falsy/">Sitepoint</a></p>
+    <p>___________________________________</p>
+    <h3>Arrays</h3>
+    <p>Lists of values like  python</p>
+    <p>Example to increment the last number in an array of numbers. Your code should make newArray equal to an array that has the same values as _array, but the last number has increased by one.</p>
+    <div class="code-block"> var sampleArray =  [0,0,7];<br>
+      var  incrementLastArrayElement = function(array) {<br>
+      <span class="indent">var newArray = [];</span><br>
+    </div>
+    <p>For example, _array = [1, 2, 3];<br>
+      turns into: newArray = [1, 2, 4];</p>
+    <div class="code-block"> newArray = array.slice(0);<br>
+      <span class="indent">var lastNumber = newArray.pop();</span><br>
+      <span class="indent">newArray.push(lastNumber + 1);</span><br>
+      <br>
+      <span class="indent">return newArray;</span><br>
+      <p>};</p>
+      <br>
+      <p>newArray = _array.slice(0);</p>
+    </div>
+    <p>Just like  string.slice(begin, [end]) separates the characters of a string,  array.slice(begin, [end]) separates the elements of an array from the index of the begin up to but not including end. We  want to make a copy of the original array, so we won't include an [end]. At  this point, newArray is a copy of the original _array.</p>
+    <p>var lastNumber = newArray.pop();</p>
+    <p>The array.pop()  method conveniently gives us (or returns) the last element of the array, which  in this case is the number we want to increase by 1. However! Be careful  because array.pop() actually removes the  last element of the array. This is why we made a copy in the previous line, so  we wouldn't modify the original _array.</p>
+    <p>newArray.push(lastNumber + 1);</p>
+    <p>Just how the jQuery  .append() method adds an element to the end of an HTML block, the array.push()  method adds an element to the end of an array. Here, we're .push()ing the  lastNumber + 1, which is exactly what we wanted to do.</p>
+    <p>And with that, we've  got our newly incremented array!</p>
+    <p>From <a href="https://www.udacity.com/course/viewer#!/c-nd000/l-4128098911/e-2864068546/m-2872888538">Udacity Course Meet JavaScript</a></p>
+    <p>Example:  Write a function  that will change any name into Capitalized first name and all caps last name:</p>
+    <div class="code-block"> var name =  &quot;AlbERt EINstEiN&quot;;<br>
+      function nameChanger(oldName) {<br>
+      <span class="indent">var finalName = oldName;</span><br>
+      <span class="indent">names = oldName.split(&quot; &quot;);</span><br>
+      <span class="indent">names[1] = names[1].toUpperCase();</span><br>
+      <span class="indent">names[0] =  names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase();</span><br>
+      <span class="indent">finalName = names[0] + &quot; &quot; +  names[1];</span><br>
+      <br>
+      <span class="indent">return finalName;</span><br>
+      <br>
+      <p>console.log(nameChanger(name));</p>
+    </div>
+    <p>The more elegant solution is to join on finalName, adding an optional space between them in the join function:</p>
+    <p>finalName = names.join(&quot; &quot;);</p>
+    <p>___________________________________</p>
+    <h3>Objects</h3>
+    <p>There are no classes in Java!! Only objects... objects are more like Python dictionaries than classes, defined in curly brackets. Arrays are  types of objects. It is not necessary to define a variable (use var) when using dot notation:</p>
+    <p>Bio.city =  &quot;Raymond&quot;;</p>
+    <p>Bio.email =  &quot;blhutchinson@bellsouth.net&quot;</p>
+    <p>I would do the above  to add new properties to the object, not create new variables</p>
+    <p>You can add to an  array by appending with dot notation or brackets, and can access it with either dot or bracket notation.</p>
+    <p>var work = {};</p>
+    <p>work.position =  &quot;Sr. Program Manager&quot;;</p>
+    <p>work.employer =  &quot;AT&amp;T&quot;;</p>
+    <p>work.years = 11;</p>
+    <p>var education = {};</p>
+    <p>education[&quot;name&quot;] = &quot;Southern Methodist University&quot;; education[&quot;years&quot;] = &quot;1996 - 1998&quot;; education[&quot;city&quot;] = &quot;Dallas, TX, US&quot;;</p>
+    <div class="code-block">
+      <p>$(&quot;#main&quot;).append(work[&quot;position&quot;]);</p>
+      <p>$(&quot;#main&quot;).append(education.name);</p>
+    </div>
+    <p>___________________________________</p>
+    <h3>JSON = JavaScript  Object Notation</h3>
+    JSON is a popular and simple format for storing and transferring nested or hierarchal data. It's so popular that most other programming languages have libraries capable of parsing and writing JSON (like <a href="https://docs.python.org/2/library/json.html">Python's JSON library</a>). Internet GET and POST requests frequently pass data in JSON format. JSON allows for objects (or data of other types) to be easily encapsulated within other objects. See the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON">JSON MDN</a> or <a href="http://json.org/">json.org</a>for more details. It is easy to make  mistakes with JSON because it uses a lot of nested curly braces, brackets, and  commas. You can find syntax errors with the<a href="http://jsonlint.com/">JSON tool</a> since errors and omissions are common. You don't need to include the variable name when checking the JSON for errors.  Sublime Text can help as well.
+    </p>
+    <p>Here is an example  of nested objects:</p>
+    <p>var education = {</p>
+    <span class="indent">&quot;schools&quot;: [ (&lt;- comment: starting an array with an open bracket)</span><br>
+    <span class="indent_twice">{ (&lt;- comment: starting an object with an open curly brace)</span><br>
+    <span class="indent_three_times">&quot;name&quot;: &quot;Southern Methodist University&quot;, (&lt;- comment: note the comma at the end, not semicolon</span><br>
+    <span class="indent_three_times">&quot;city&quot;:  &quot;Dallas, TX, US&quot;,</span><br>
+    <span class="indent_three_times">&quot;degree&quot;:  &quot;MBA&quot;,</span><br>
+    <span class="indent_three_times">},</span><br>
+    <span class="indent_twice">]</span><br>
+    <span class="indent">} (&lt;- comment: note NO semicolon at  the end of the variable</span><br>
+    <p>___________________________________</p>
+    <h3>JavaScript and the DOM</h3>
+    <p>Notes from Udacity  &amp; Mozilla: <br>
+      As part of the  process of building websites, browsers convert all of the HTML they receive  into a JavaScript object called the Document Object Model (DOM), which contains  all of the information about a website's visible elements. In fact, from the  console, you can examine the DOM for any website (including this one!). By  examining the DOM, you can learn pretty much everything about a website. Document in Java is the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">DOM</a>.  We need to change the DOM if we want to add or remove page elements.</p>
+    <p><em>getElementById(id)</em> is a DOM manipulation method that will grab a single page element object with  the id given. Notice how the word Element is singular in the method name. That  means it returns a single page element. Other DOM methods containing Elements, like <em>getElementsByClassName()</em>, will return an array of page elements.</p>
+    <p>The Element interface represents an object of a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">Document</a>.  This interface describes methods and properties common to all kinds of  elements. Specific behaviors are described in interfaces which inherit from Element but add additional functionality. For example, the <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement">HTMLElement</a> interface is the base interface for HTML elements, while the <a href="https://developer.mozilla.org/en-US/docs/Web/API/SVGElement">SVGElement</a> interface is the basis for all SVG elements.</p>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement.style">.style</a>is a DOM property.  It is used to change a CSS style of the selected page element. The property that follows .style is the CSS style that will be modified by this piece of code. Here's a list of all the possible <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference">CSS Properties</a> you can change.</p>
+    <p>To make sure a user can't input HTML into your JSON form to hack it, turn &lt; and &gt; from HTML into harmless strings.</p>
+    <div class="code-block">
+      <p>var html = '&lt;script src=&quot;<a href="http://hackyourwebsite.com/eviljavascript.js">http://hackyourwebsite.com/eviljavascript.js</a>&quot;&gt;&lt;/script&gt;';</p>
+      var charEscape =  function(_html) {<br>
+      <span class="indent">var newHTML = _html;</span><br>
+      <span class="indent">newHTML = _html.replace(/&lt;/g,  &quot;&amp;lt;&quot;);</span><br>
+      <span class="indent">newHTML = newHTML.replace(/&gt;/g,  &quot;&amp;gt;&quot;);</span><br>
+      <span class="indent">return newHTML;</span><br>
+      <p>};</p>
+      <br>
+      <p>console.log(charEscape(html));</p>
+    </div>
+    <p>returns:<br>
+      LOG: '&amp;lt;script  src=&quot;<a href="http://hackyourwebsite.com/eviljavascript.js">http://hackyourwebsite.com/eviljavascript.js</a>&quot;&amp;gt;&amp;lt;/script&amp;gt;'</p>
+    <p>This follows the  standard format:</p>
+    <p>string.replace(old,  new)<br>
+      g - Global replace (If this flag is  specified, all occurrences of the regular expression within the originalString  are replaced. Otherwise only the first occurrence is replaced.)<br>
+      >i - Case insensitive  match (If this flag is  specified, the match is performed in a case insensitive fashion.)</p>
+    <br>
+    <p>**Bracket notation  always works. Dot notation requires properties that begin with a letter and do  not include special characters.</p>
+    <p>document.createElement('pre');<br>
+      is the same as<br>
+      document['createElement']('pre');<br>
+      <br>
+    <p>console.log(weirdObject.property);<br>
+      is the same as<br>
+      console.log(weirdObject[&quot;property&quot;]);</p>
+    <p>___________________________________</p>
+    <h3>Control  Flow</h3>
+    <p>Java uses evaluators  similar to Python.</p>
+    <p>&lt;, &gt;, &lt;=, &gt;=, !=, === (uses 3 equal symbols for  equal to, can use 2 equal symbols but it is not as safe)</p>
+    <p>If statement syntax:  conditions are in parentheses, the action is in curly braces, and there is no colon at the end of the if condition statement</p>
+    <p>if(condition) {<br>
+      <span class="indent">doSomething();</span><br>
+      } <span class="indent">else {</span><br>
+      <span class="indent">doSomethingElse();</span><br>
+      }</p>
+    <p>Example:<br>
+      if (tired === true)  {<br>
+      <span class="indent">drinkCoffee();</span><br>
+      } <span class="indent">else {</span><br>
+      <span class="indent">drinkWater();</span><br>
+      }</p>
+    <p>___________________________________</p>
+    <h3>Loops</h3>
+    <p>Similar to Python: While Loop continues to do a piece of code while an evaluated condition is true. When it is no longer true, it exits the  loop. Conditions are in parentheses, the  action is in curly braces, and there is no colon at the end of the while condition statement.</p>
+    <p>while(condition) {<br>
+      <span class="indent">doSomething();</span><br>
+      }</p>
+    Example:<br>
+    <div class="code-block"> var cameron = {};<br>
+      cameron.job = &quot;course dev&quot;;<br>
+      <br>
+      Var makeCourse =  function(){<br>
+      <span class="indent">//make  a course</span><br>
+      <span class="indent">console.log(&quot;Made  a course&quot;);</span><br>
+      }<br>
+      var courses = 0<br>
+      while (cameron.job  === &quot;course dev&quot;) {<br>
+      <span class="indent">makeCourse();</span><br>
+      <span class="indent">courses = courses + 1;</span><br>
+      <span class="indent">If(courses  === 10) {</span><br>
+      <span class="indent">cameron.job = &quot;learning specialist&quot;;</span><br>
+      <span class="indent">}</span><br>
+      }<br>
+      console.log(cameron.job); </div>
+    <p>For Loops are  different, they have 3 inputs:
+    <ul class="circle">
+      <li>Initialization = how  to start the loop</li>
+      <li>Condition = the  while condition to continue the loop</li>
+      <li>Mutator = how to  increment the loop</li>
+    </ul>
+    </p>
+    <p>Syntax:<br>
+      for(initialization;  condition; mutator) {<br>
+      <span class="indent">doSomething();</span><br>
+      }</p>
+    <p>The For In loop allows you to iterate over an array of objects. The item is the  INDEX in the list, not the value of the item</p>
+    <p>Syntax:<br>
+      for(item in object){<br>
+      <span class="indent">doSomething();</span><br>
+      }</p>
+    <p>Example:<br>
+      var countries = [&quot;Germany&quot;,  &quot;Argentina&quot;, &quot;Brazil&quot;, &quot;Netherlands&quot;]<br>
+      for(country in  countries){<br>
+      <span class="indent">console.log(country);</span><br>
+      }</p>
+    <p>Prints 0 1 2 3 on  the console log because it is the INDEX. To print the  countries, change it to this:</p>
+    <p>var countries = </p>
+    var countries = [&quot;Germany&quot;,  &quot;Argentina&quot;, &quot;Brazil&quot;, &quot;Netherlands&quot;]<br>
+    for(country in countries){<br>
+    <span class="indent">console.log(countries[country]);</span><br>
+    }
+    </p>
+    <p>___________________________________</p>
+    <h3>Functions:</h3>
+    <p>Functions bundle instructions together. The purpose of RETURN statements are to make the function give back a value.  This is why you see console.log returning back "undefined." Split acts on a string and separates it based on a parameter in the parens. Objects are in curly  braces, and functions are objects. Most items in Java are objects. Functions are defined with two different syntaxes. There are subtle differences in how Java uses them, but they are similar:</p>
+    <p>var myFunc =  function(parm1, parm 2){<br>
+      <span class="indent">//code  goes here</span><br>
+      <span class="indent">//parameters  are optional</span><br>
+      }</p>
+    <p>Or</p>
+    <p>function myFunc(parm1,parm2){<br>
+      <span class="indent">//code  goes here</span><br>
+      <span class="indent">//parameters  are optional</span><br>
+      }</p>
+    <p>Example of return:<br>
+      var myString = &quot;This is my favorite string!&quot;<br>
+      var myArray = myString.split(&quot; &quot;);</p>
+    <p>Will come back on  the console: &quot;undefined&quot; Unless you then invoke </p>
+    <p>myArray</p>
+    <p>Then it returns </p>
+    <p>[&quot;This&quot;,  &quot;is&quot;, &quot;my&quot;, &quot;favorite&quot;, &quot;string!&quot;]</p>
+    <p>The split function returns the split string into the array.</p>
+    <p>___________________________________</p>
+    <p>Java has many ways  to say the same thing.  These are all  equivalent so you need to understand them to read other people's code. </p>
+    <p>Literal notation:<br>
+      var bio = {<br>
+      <span class="indent">&quot;name&quot;  : &quot;Brenda Hutchinson&quot;</span><br>
+      }</p>
+    <p>Dot notation:<br>
+      bio.name =  &quot;Brenda Hutchinson&quot;;</p>
+    <p>Bracket notation:<br>
+      bio[&quot;name&quot;] = &quot;Brenda Hutchinson&quot;;</p>
+    <p>___________________________________</p>
+    <p>Anonymous functions don't have a name, here are examples of how they can change your code:</p>
+    <p><em>Example 1</em><br>
+      var outsideExample = &quot;First string&quot;;<br>
+      function example() {<br>
+      <span class="indent">var outsideExample = &quot;Second  string&quot;;</span><br>
+      }<br>
+      example();<br>
+      console.log(outsideExample); // &quot;First string&quot;</p>
+    <p><em>Example 2</em><br>
+      var outsideExample =  &quot;First string&quot;;<br>
+      function example() {<br>
+      outsideExample = &quot;Second  string&quot;;<br>
+      }<br>
+      example();<br>
+      console.log(outsideExample); // &quot;Second string&quot;</p>
+    <p>In the first  example, notice that we're using var within example(). var means we're  declaring a new outsideExample variable within example(). There are two  outsideExamples in our program, one with a global scope (&quot;First  string&quot;) and one with a function-level scope inside example(). After we run  example() and try to log outsideExample, we'll log the global version of outsideExample, which is &quot;First string&quot; because console.log() doesn't  have access to the version of outsideExample that was created within example().</p>
+    <p>A global scope means  that the variable is accessible anywhere  inside our program, which is why we don't need to use var in example 2. In  example 2, there's only one version of outsideExample because we aren't declaring a new variable inside example(). Instead we're simply modifying the  value of the original global variable outsideExample, which is why we log &quot;Second string&quot; at the end of example 2. From <a href="https://www.udacity.com/course/viewer#!/c-ud804/l-2777698539/e-2922888562/m-2898618635">Udacity course JavaScript Basics</a></p>
+    <p>There are two syntaxes to declare functions:</p>
+    <p>var functionName =  function() {}</p>
+    <p>and</p>
+    <p>function  functionName() {}</p>
+    <p>The JavaScript interpreter, which is responsible for taking the code you write and preparing  it to become machine code, will handle the two function declarations slightly  differently because of the way it handles variable declarations. All variable  declarations will immediately get moved to the top of their scope. For example:</p>
+    <p>var x =  5;<br>
+      console.log(x); // 5<br>
+      var y = 10;</p>
+    <p>is the same as</p>
+    <p>var x, y; // this  line simply declares x and y at the same time.<br>
+      x = 5;<br>
+      console.log(x); // 5<br>
+      y = 10;</p>
+    <p>Notice how the  declaration of y moved to the top of the scope. And also notice how the first line doesn't set a value for neither x nor y. After var x, y; both x and y are  undefined. The same behavior  holds true for other types of variables, including functions. If you use the var functionName syntax, only the function's declaration (e.g. var  functionName;) gets moved at the top of its scope. However, if you use function functionName() syntax, the function declaration and definition (the actual instructions inside the function) get moved to the top  of the function's scope. From <a href="https://www.udacity.com/course/viewer#!/c-ud804/l-2777698539/e-2935478553/m-2899138636">Udacity course JavaScript Basics</a></p>
+    <p>example1();<br>
+      function example1() {<br>
+      <span class="indent">console.log(&quot;Ran the  example&quot;);</span><br>
+      }</p>
+    <p>Logs //Ran the  example</p>
+    <br>
+    <p>example2()<br>
+      var example2 = function() {<br>
+      <span class="indent">console.log(&quot;Ran the example&quot;);</span><br>
+      }</p>
+    <p>Logs // TypeError:  example2 is not a function</p>
+    <p>___________________________________</p>
+    <h3>jQuery</h3>
+    <p>jQuery is the most  popular JavaScript library today, in use by over 60% of the top 100,000 most visited websites. jQuery is simply a  JavaScript object! jQuery is popular, easy to use, makes selecting DOM elements and manipulating them simple by  providing a consistent API that works across all browsers. It exists so  developers can focus on the user experience, not browser compatibility. Check out the <a href="http://jquery.com/">jQuery website</a> to learn more and look up specific library items. jQuery returns an  object that looks and behaves like an array, but also includes additional methods. jQuery and the  &quot;$&quot; character are mapped to the exact same thing. Other libraries also map the &quot;$&quot; to  a variable.</p>
+    <p>You can pass in  strings or functions or DOM elements.</p>
+    <p>$(&quot;#foo&quot;);</p>
+    <br>
+    <p>You can call methods on the jQuery:</p>
+    <p>$.ajax()  (Check out the ajax class for info)</p>
+    <br>
+    <p>Add jQuery to any website using script tags:</p>
+    <p>Local: &lt;script src='js/jquery.min.js'&gt;&lt;/script&gt;</p>
+    <p>Official: &lt;script  src='//code.jquery.com/jquery-1.11.1.min.js'&gt;&lt;/script&gt;</p>
+    <p>Content Delivery Network (CDN)</p>
+    <p>(like Google:  &lt;script  src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'&gt;&lt;/script&gt;</p>
+    <p>Using CDN is  recommended - faster and allows caching. &nbsp;.min is the minified version = faster</p>
+    <br>
+    <p>jQuery makes it easy  to select elements or a collection of elements in the DOM. jQuery selectors quickly access them. &nbsp;The selectors are really just strings in the  jQuery object. Examples:</p>
+    <p>$('tag') - will  result in a collection of all the elements with that certain tag, like 'div' or  'h2'; not the best method</p>
+    <p>$('.class') - more  specific collection than tags; don't forget the period at front! It is  essentially a CSS selector</p>
+    <p>$('#id') - specific  to one ID element.</p>
+    <br>
+    <p>Check that you have  what you want by looking at the console log:</p>
+    <p>console.log(variable);</p>
+    <br>
+    <p>___________________________________</p>
+    <p>Traversing is a  method to select parents and children of the item you selected in the HTML DOM structure. </p>
+    <img src="images/family_tree.png" width="634" height="327" alt=""/>
+    <p>In this example,  $('#Cameron').parent() returns up one level, #MarkSuzanne</p>
+    <p>$('#Cameron').parents() returns up one level, #MarkSuzanne,  #JerryJudy, and #JohnAudrey - all parents</p>
+    <p>$('#Cameron').parent(#JerryJudy)  returns only #JerryJudy</p>
+    <p>$('#Cameron').children()  returns #Taylor and #Grant, only one level down</p>
+    <p>$('#Cameron').find()  goes down the DOM more than one level, many levels down</p>
+    <p>$('#Cameron').siblings()  returns #Max, a collection of all items with the same parent of #Cameron</p>
+    <p>-&gt;Use the .find('*') selector to get the descendants of each element (all descendants) *  is a universal selector.</p>
+    <br>
+    <p>___________________________________</p>
+    <p>In the jQuery  documentation, the .method(required) means you must pass in an argument to the  method</p>
+    <p>If it uses brackets,  it is an optional parameter: .method([ ]) </p>
+    <p>Examples:</p>
+    <p>var featuredArticle;</p>
+    <p>featuredArticle = $(  &quot;.featured&quot; );</p>
+    <p>featuredArticle.toggleClass(  &quot;featured&quot; );</p>
+    <p>To remove the class 'featured' from Article #2 and add it to Article #3:</p>
+    <p>var article2,  article3;</p>
+    <p>article2 = $(  &quot;.featured&quot; );</p>
+    <p>article3 =  article2.next();</p>
+    <p>article2.toggleClass(  &quot;featured&quot; );</p>
+    <p>article3.toggleClass(  &quot;featured&quot; );</p>
+    <br>
+    <p>___________________________________</p>
+    <p>.attr() - </p>
+    <p>The .attr() method gets the attribute value for only the first element in the matched set. To get the value for each element individually, use a looping construct such as jQuery's .each() or .map() method.</p>
+    <p>Using jQuery's .attr() method to get the value of an element's attribute has two main benefits (from <a href="http://api.jquery.com/attr/">http://api.jquery.com/attr/</a>):</p>
+    <ul class="circle">
+      <li>Convenience: It can be called directly on a jQuery object and chained to other jQuery methods.</li>
+      <li>Cross-browser consistency: The values of some attributes are reported inconsistently across browsers, and even across versions of a single browser. The .attr() method reduces such inconsistencies.</li>
+    </ul>
+    <p>If you only pass in  the attribute name (string) you get its value. If you pass in the  attribute name string and a value (string or number) you set the attribute to that value</p>
+    <br>
+    <p>Example- set the href of the &lt;a&gt;  in the first nav item to &quot;#1&quot;.</p>
+    <p>var navList,  firstItem, link;</p>
+    <p>navList =  $('.nav-list');</p>
+    <p>firstItem =  navList.children().first();</p>
+    <p>link =  firstItem.find('a');</p>
+    <p>link.attr('href',  '#1');</p>
+    <br>
+    <p>This also works!</p>
+    <p>var link;</p>
+    <p>link =  $('.nav-list').children().first().find('a');</p>
+    <p>link.attr('href',  '#1');</p>
+    <p>.css acts exactly  the same!</p>
+    <br>
+    <p>___________________________________</p>
+    <p>.append - adds new  element as last child</p>
+    <p>.prepend - adds new  element as the first child</p>
+    <p>.insertBefore -  creates sibling before current element</p>
+    <p>.insertAfter -  creates sibling after current element</p>
+    <p>___________________________________</p>
+    <p>.each is like  running a loop, over a jQuery object and execute a function on each element.  .each(function). You have to use $( this  ) selector to get the current element in  the loop. $( this ); refers to the DOM element itself without having to reselect it. </p>
+    <br>
+    <p>Example- use jQuery's each() method to iterate through the &lt;p&gt;s, calculate the length of each paragraph, and add each length to the end of each &lt;p&gt;. Don't change the text inside each paragraph  &lt;p&gt;, otherwise your lengths won't be  correct!</p>
+    <p>function numberAdder  () {</p>
+    <p>var  text, number;</p>
+    <p>text  = $( this ).text() //find the text that is already there</p>
+    <p>number  = text.length; //find out how long it is</p>
+    <p>$(  this ).text(text + &quot; &quot; + number); </p>
+    <p>}</p>
+    <br>
+    <p>$('p').each(numberAdder);</p>
+    <p>___________________________________</p>
+    <p>A function passed  into the jQuery object runs on document.ready, which occurs after the DOM has  been loaded.</p>
+    <p>Why is this useful?</p>
+    <p>External JavaScript  files in the &lt;head&gt; of a document are generally downloaded earlier than  JavaScript files included in the &lt;body&gt;. JavaScript files are also executed immediately at their location in the document, which means they can't  access any DOM elements that come after  their &lt;script&gt; tag in the DOM. This leads to some interesting situations.</p>
+    <p>Imagine you're  building a website and you've got a script you want to run against some DOM  elements in the page. If you include your script in the &lt;head&gt; normally,  it will run as soon as it's downloaded, which will occur before the DOM has built the elements you want  your script to run against. So your script wouldn't be able to do anything.</p>
+    <p>You could include  your script at the bottom of the &lt;body&gt;, but that would mean that the  download could potentially start later in the load process, slowing down the  initial page render.</p>
+    <p>So what can you do?</p>
+    <p>Pass your function  into the jQuery object, like so:</p>
+    <p>function  someFunction() {<br>
+      // Do interesting  things<br>
+      }<br>
+      $(someFunction)</p>
+    <p>or</p>
+    <p>$(function(){<br>
+      // Do interesting things<br>
+      })</p>
+    <p>Now you can include  your script in the &lt;head&gt; and it won't run until the DOM has been built  and the elements that you want to manipulate are on the page. From <a href="https://www.udacity.com/course/viewer#!/c-ud245/l-3311478538/e-3359568542/m-3356958537">Udacity jQuery course</a></p>
+  </div>
+</div>
+</body>
+</html>
